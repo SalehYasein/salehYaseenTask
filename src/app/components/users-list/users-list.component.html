@@ -1,0 +1,33 @@
+<app-header (sendTotalPages)="loadPage($event)"></app-header>
+
+<div class="pagesNavigation">
+  <mat-button-toggle-group [(ngModel)]="selectedOption" (change)="onSelectionChange()">
+    <mat-button-toggle *ngFor="let item of pagesFilter" [id]="item.key.toString()" [value]="item.key">
+      {{ item.value }}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate" color="blue"></mat-progress-bar>
+
+<div class="container">
+  <mat-grid-list cols="6" rowHeight="250px" gutterSize="20px">
+    <mat-grid-tile *ngFor="let user of users | async">
+      <mat-card class="card">
+        <div class="card-header">
+          <mat-icon>perm_identity</mat-icon>
+          <span>User ID | {{ user.id }}</span>
+        </div>
+        <img mat-card-image src="{{ user.avatar }}" alt="{{ user.first_name }} avatar">
+        <mat-card-content>
+          <h4>{{ user.first_name }} {{ user.last_name }}</h4>
+        </mat-card-content>
+        <div class="card-actions">
+          <button mat-button (click)="getUserById(user.id)">
+            <mat-icon>contact_mail</mat-icon>View Details
+          </button>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

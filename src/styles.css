@@ -1,0 +1,31 @@
+:root {
+  --nav-bg: #BFBFBF;
+  --sec-bg: #f0f2ffdc;
+  --primary-color: #16558f;
+  --secondary-color: #0583d3;
+  --border-color: #b8e3ff;
+  --text-color: #16558f;
+  --text-alt-color: #fff;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+mat-progress-bar {
+  height: 6px;
+}
+
+a {
+  text-decoration: none;
+}

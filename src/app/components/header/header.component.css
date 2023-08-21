@@ -1,0 +1,104 @@
+mat-toolbar {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px 0 20px;
+  background-color: #fff;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ApiInfo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.unit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unit mat-icon {
+  color: var(--primary-color);
+}
+
+.unit p {
+  padding: 0 10px;
+  border-right: 1px solid var(--border-color);
+}
+
+.unit span {
+  padding: 0 10px;
+  color: var(--primary-color);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search input {
+  width: 400px;
+  height: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  padding-left: 40px;
+  background-color: transparent;
+}
+
+.search input:focus {
+  outline: none;
+  border: 1px solid #777;
+}
+
+.search .searchIcon {
+  width: 40px;
+  height: 40px;
+  margin-right: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--border-color);
+}
+
+.search .result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 42px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: var(--secondary-color);
+  margin-left: -38px;
+  border: none;
+  color: var(--text-alt-color);
+  cursor: pointer;
+  position: relative;
+}
+
+.search .result::after{
+  content: '';
+  position: absolute;
+color: var(--secondary-color);
+font-size: 12px;
+color: #777;
+bottom: -20px;
+left: 0;
+display: none;
+}
+.search .result.userExists::after{
+  content: 'Go To User Details';
+}
+.search .result.userNotExists::after{
+  content: 'Clear Search Failed';
+}
+.search .result:hover::after{
+  display: block;
+}

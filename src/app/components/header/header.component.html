@@ -1,0 +1,32 @@
+<mat-toolbar>
+  <div class="ApiInfo">
+    <div class="unit">
+      <mat-icon>copy_all</mat-icon>
+      <p>Total Pages</p>
+      <span>{{ totalPages }}</span>
+    </div>
+    <div class="unit">
+      <mat-icon>switch_account</mat-icon>
+      <p>Users Per Page</p>
+      <span>{{ usersPerPage }}</span>
+    </div>
+    <div class="unit">
+      <mat-icon>people_alt</mat-icon>
+      <p>Total Users</p>
+      <span>{{ totalUsers }}</span>
+    </div>
+  </div>
+  <div class="search">
+    <div class="searchIcon">
+      <mat-icon>search</mat-icon>
+    </div>
+    <input type="input" (focus)="getUserIDs()" [(ngModel)]="searchQuery" placeholder="Search by ID"
+      (input)="searchBtn()">
+    <button class="result userExists" *ngIf="userIsExists && show" (click)="getUserById()">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+    <span class="result userNotExists" *ngIf="!userIsExists && show" (click)="clearSearchQuery()">
+      <mat-icon>close</mat-icon>
+    </span>
+  </div>
+</mat-toolbar>

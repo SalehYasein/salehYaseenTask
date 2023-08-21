@@ -1,0 +1,34 @@
+<div class="title">
+  <mat-icon>badge</mat-icon>
+  <p *ngIf="user | async as user">{{ user.first_name }} Details</p>
+</div>
+
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate" color="primary"></mat-progress-bar>
+
+<div class="container">
+  <div class="card" *ngIf="user | async as user">
+    <div class="card-details">
+      <img src="{{ user.avatar }}" alt="" width="80px">
+      <div class="labels">
+        <p>User ID</p>
+        <p>First Name</p>
+        <p>Last Name</p>
+        <p>Email</p>
+      </div>
+      <div class="data">
+        <p>{{ user.id }}</p>
+        <p>{{ user.first_name }}</p>
+        <p>{{ user.last_name }}</p>
+        <div class="email-link">
+          <div class="mailto">Send email to {{user.first_name}}</div>
+          <p class="email"> <a href="{{user.email}}">{{ user.email }}</a></p>
+        </div>
+
+      </div>
+    </div>
+    <div class="back-button">
+      <mat-icon>arrow_back_ios</mat-icon>
+      <a (click)="backToUsersList()">back to Users List</a>
+    </div>
+  </div>
+</div>

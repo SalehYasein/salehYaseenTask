@@ -1,0 +1,119 @@
+
+.title {
+  padding: 20px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 30px;
+}
+
+.title mat-icon {
+  margin: 20px;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.card {
+  height: 250px;
+  width: 500px;
+  background-color: transparent;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-details {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 15px;
+}
+
+.card-details img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 40px;
+  border: 3px solid var(--secondary-color);
+}
+
+.card-details .labels>* {
+  padding-right: 10px;
+  border-right: 1px solid var(--text-color);
+}
+
+.card-details .data {
+  padding-left: 10px;
+  color: var(--secondary-color);
+}
+
+.email-link{
+  position: relative;
+}
+.email-link a{
+  color: var(--secondary-color);
+}
+.data .mailto{
+  position: absolute;
+  background-color: var(--secondary-color);
+  color: white;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 5px;
+    width: 150px;
+    height: 25px;
+    line-height: 25px;
+    padding: auto;
+    top: -35px;
+    left: 70px;
+    visibility: hidden;
+}
+.data .mailto::after{
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--secondary-color);
+  top: 24px;
+  left: 24px;
+  visibility: hidden;
+}
+.email-link:hover .mailto,
+.email-link:hover .mailto::after
+{
+  visibility: visible;
+}
+
+
+.back-button {
+  display: flex;
+  align-items: center;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.back-button:hover {
+  color: var(--primary-color);
+}
